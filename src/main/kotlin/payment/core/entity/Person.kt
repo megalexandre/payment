@@ -1,6 +1,7 @@
 package payment.core.entity
 
 import payment.comomns.PersonType
+import payment.comomns.PersonType.INDIVIDUAL
 
 data class Person(
     val name: String,
@@ -10,4 +11,7 @@ data class Person(
     val personType: PersonType,
     val wallet: Wallet,
 ) {
+
+    val canSendMoney: Boolean
+        get() = personType == INDIVIDUAL
 }
