@@ -2,8 +2,8 @@ package payment.core.usecase.stub
 
 import java.math.BigDecimal
 import java.math.BigDecimal.ZERO
-import payment.comomns.PersonType.INDIVIDUAL
-import payment.comomns.PersonType.LEGAL
+import payment.commons.PersonType.INDIVIDUAL
+import payment.commons.PersonType.LEGAL
 import payment.core.entity.Person
 import payment.core.entity.Wallet
 

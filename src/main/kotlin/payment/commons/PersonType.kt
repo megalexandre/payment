@@ -1,4 +1,4 @@
-package payment.comomns
+package payment.commons
 
 enum class PersonType {
 

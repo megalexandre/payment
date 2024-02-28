@@ -1,9 +1,10 @@
 package payment.core.entity
 
-import payment.comomns.PersonType
-import payment.comomns.PersonType.INDIVIDUAL
+import payment.commons.PersonType
+import payment.commons.PersonType.INDIVIDUAL
 
 data class Person(
+    val id: String,
     val name: String,
     val email: String,
     val document: String,

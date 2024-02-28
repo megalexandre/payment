@@ -1,4 +1,4 @@
-package payment.comomns.extensions
+package payment.commons.extensions
 
 inline fun Boolean.alsoTrue(block:() -> Unit): Boolean {
 

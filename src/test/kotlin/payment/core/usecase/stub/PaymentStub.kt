@@ -1,11 +1,13 @@
 package payment.core.usecase.stub
 
-import java.math.BigDecimal
-import payment.core.entity.Payment
+import io.azam.ulidj.ULID.random
+import java.math.BigDecimal.TEN
+import payment.core.entity.Transaction
 
 
-val paymentStub = Payment(
+val transactionStub = Transaction(
+    id = random(),
     payer = personLegalStub,
     payee = personIndividualStub,
-    value = BigDecimal.TEN,
+    value = TEN,
 )
