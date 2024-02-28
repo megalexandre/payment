@@ -1,5 +1,6 @@
 package payment.core.usecase
 
+import payment.comomns.extensions.alsoTrue
 import payment.core.entity.Payment
 
 class SendMoneyUsecase {
