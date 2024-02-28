@@ -1,5 +1,6 @@
 package payment.core.usecase.stub
 
+import io.azam.ulidj.ULID
 import java.math.BigDecimal
 import java.math.BigDecimal.ZERO
 import payment.commons.PersonType.INDIVIDUAL
@@ -16,6 +17,7 @@ val walletZeroValueStub = Wallet(
 )
 
 val personLegalStub = Person(
+    id = ULID.random(),
     name ="fulano",
     email = "fulano@mail.com",
     document = "1q231231",
@@ -25,6 +27,7 @@ val personLegalStub = Person(
 )
 
 val personIndividualStub = Person(
+    id = ULID.random(),
     name ="fulano",
     email = "fulano@mail.com",
     document = "1q231231",

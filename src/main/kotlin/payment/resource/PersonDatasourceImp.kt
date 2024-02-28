@@ -12,6 +12,7 @@ import payment.core.entity.Wallet
 class PersonDatasourceImp: PersonDatasource {
     override fun findById(id: String): Person? =
         savedPersons().firstOrNull{ it.id == id}
+
     private fun savedPersons(): List<Person> =  listOf(
         Person(
             id = "01HQ34HPVK0RRA7CA2E2MNK37H",
@@ -22,6 +23,7 @@ class PersonDatasourceImp: PersonDatasource {
             personType = LEGAL,
             wallet = Wallet(TEN)
         ),
+
         Person(
             id = "01HQ34HPVKXYCGG8MYE2QCZ98G",
             name = "individual",
@@ -32,4 +34,5 @@ class PersonDatasourceImp: PersonDatasource {
             wallet = Wallet(TEN)
         )
     )
+
 }

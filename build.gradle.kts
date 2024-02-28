@@ -10,6 +10,9 @@ plugins {
 group = "payment"
 version = "0.0.1-SNAPSHOT"
 
+val cumcumber_version = "7.15.0"
+val wiremock_version = "3.4.0"
+
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
 }
@@ -33,8 +36,25 @@ dependencies {
 	testImplementation("org.mockito:mockito-core")
 	testImplementation("io.mockk:mockk:1.12.2")
 	testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
-	/*
 
+
+	//serialização
+	implementation("com.google.code.gson:gson")
+
+	//test
+	testImplementation("io.rest-assured:kotlin-extensions")
+	testImplementation("org.springframework.boot:spring-boot-starter-test"){
+		exclude(module = "junit")
+		exclude(module = "mockito-core")
+	}
+	testImplementation("io.rest-assured:rest-assured")
+	testImplementation("org.junit.jupiter:junit-jupiter")
+
+	testImplementation("io.cucumber:cucumber-java:$cumcumber_version")
+	testImplementation("io.cucumber:cucumber-java8:$cumcumber_version")
+	testImplementation("io.cucumber:cucumber-junit:$cumcumber_version")
+	testImplementation("io.cucumber:cucumber-spring:$cumcumber_version")
+	/*
 
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("jakarta.validation:jakarta.validation-api")
@@ -44,9 +64,6 @@ dependencies {
 	implementation("ch.qos.logback:logback-classic")
 	implementation("org.slf4j:slf4j-api")
 
-
-
-	implementation("com.google.code.gson:gson")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.data:spring-data-mongodb")
 
@@ -55,16 +72,7 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 
 
-	//test
-	testImplementation("io.rest-assured:kotlin-extensions")
-	testImplementation("org.springframework.boot:spring-boot-starter-test"){
-		exclude(module = "junit")
-		exclude(module = "mockito-core")
-	}
-	testImplementation("io.rest-assured:rest-assured")
 
-
-	testImplementation("org.junit.jupiter:junit-jupiter")
 
 
 	//teste container
@@ -74,10 +82,7 @@ dependencies {
 	testImplementation("org.testcontainers:mongodb")
 
 	//teste cubumber
-	testImplementation("io.cucumber:cucumber-java:$cumcumber_version")
-	testImplementation("io.cucumber:cucumber-java8:$cumcumber_version")
-	testImplementation("io.cucumber:cucumber-junit:$cumcumber_version")
-	testImplementation("io.cucumber:cucumber-spring:$cumcumber_version")
+
 	* */
 
 }
