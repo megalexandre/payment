@@ -1,7 +1,6 @@
 package payment.core.entity
 
 import java.math.BigDecimal
-
 data class Transaction(
     val id: String,
     val payer: Person,
@@ -9,9 +8,7 @@ data class Transaction(
     val value: BigDecimal,
 ){
     val isValid: Boolean
-        get() = payer.wallet.value > value
-
-    val isInvalid: Boolean
-        get() = !isValid
+        get() = payer.wallet.value >= value
 
 }
+

@@ -8,7 +8,6 @@ data class TransactionAttempt(
     val payeeId: String,
     val value: BigDecimal,
 ) {
-
     fun toTransaction(payer: Person, payee: Person) = Transaction(
         id = random(),
         payer = payer,

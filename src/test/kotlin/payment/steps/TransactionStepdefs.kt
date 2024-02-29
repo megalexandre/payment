@@ -17,7 +17,7 @@ class TransactionStepdefs: ApplicationIT() {
         response = Given {
             body(body)
         } When {
-            post("transaction")
+            post("http://localhost:$serverPort/transaction")
         }
     }
 

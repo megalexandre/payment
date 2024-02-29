@@ -12,7 +12,6 @@ data class Person(
     val personType: PersonType,
     val wallet: Wallet,
 ) {
-
     val canSendMoney: Boolean
         get() = personType == INDIVIDUAL
 }
