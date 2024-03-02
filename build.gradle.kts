@@ -37,6 +37,9 @@ dependencies {
 	testImplementation("io.mockk:mockk:1.12.2")
 	testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
 
+	//log
+	implementation("ch.qos.logback:logback-classic")
+	implementation("org.slf4j:slf4j-api")
 
 	//serialização
 	implementation("com.google.code.gson:gson")
@@ -61,8 +64,6 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib")
 
-	implementation("ch.qos.logback:logback-classic")
-	implementation("org.slf4j:slf4j-api")
 
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.data:spring-data-mongodb")
@@ -70,10 +71,6 @@ dependencies {
 	//metrics
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
-
-
-
-
 
 	//teste container
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")

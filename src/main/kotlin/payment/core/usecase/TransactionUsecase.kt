@@ -4,12 +4,13 @@ import org.springframework.stereotype.Service
 import payment.core.entity.Transaction
 import payment.core.entity.TransactionAttempt
 import payment.core.exeception.InvalidUsecaseException
+import payment.infrastructure.Sl4jLogger
+import payment.infrastructure.info
 
 @Service
 class TransactionUsecase(
     val findPerson : FindPersonByIdUsecase
-) {
-
+): Sl4jLogger(){
     fun execute(transactionAttempt: TransactionAttempt): Transaction {
 
         val transaction = transactionAttempt.toTransaction(
@@ -26,13 +27,17 @@ class TransactionUsecase(
         with(transaction){
 
             if(!payer.canSendMoney) {
-                throw InvalidUsecaseException("this person ${payer.id} is not authorized to do a transaction")
+                logger.info { "this payer ${payer.id} is not authorized to do a transaction" }
+                throw InvalidUsecaseException("this payer is not authorized to do a transaction")
             }
 
             if(!isValid) {
+                logger.info {
+                    "this transaction is not valid, because the value: " +
+                    "$value exceed payer ${payer.id} wallet ${payer.wallet.value}"
+                }
                 throw InvalidUsecaseException("this transactions is not valid")
             }
-
         }
     }
 
